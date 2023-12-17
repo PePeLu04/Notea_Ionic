@@ -40,18 +40,18 @@ crossorigin=""/>
           </ion-item>
           <ion-toolbar>
             <ion-button slot="start" *ngIf="!isMapVisible" (click)="showMap()">
-              <ion-icon slot="icon-only" src="assets/icons/compass.svg"></ion-icon>
+              <ion-icon slot="icon-only" src="assets/icons/earth.svg"></ion-icon>
             </ion-button>
             <div id="map" *ngIf="isMapVisible"
             style="height: 300px; width: 300px; margin-left: 10%;">
             </div>
             <ion-button slot="start" *ngIf="isMapVisible" (click)="hideMap()">Close Map</ion-button>    
             <ion-button slot="end" (click)="takePic()">
-              <ion-icon *ngIf="!imageUrl || imageUrl === 'no-image'" src="assets/icons/image.svg"></ion-icon>
+              <ion-icon *ngIf="!imageUrl || imageUrl === 'no-image'" src="assets/icons/aperture.svg"></ion-icon>
               <img *ngIf="imageUrl && imageUrl !== 'no-image'" [src]="imageUrl">
             </ion-button>
           </ion-toolbar>
-          <ion-button type="submit" expand="full" [disabled]="!form.valid">Submit</ion-button>
+          <ion-button id="submit-button" type="submit" expand="full" [disabled]="!form.valid">Submit</ion-button>
         </form>
       </ion-col>
     </ion-row>
