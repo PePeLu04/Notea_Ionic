@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Note</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Title</ion-label>
+    <ion-input [(ngModel)]="note.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea [(ngModel)]="note.description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+      <ion-button *ngIf="note.pos" (click)="removePosition()">Remove Position</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <img *ngIf="note.imageUrl" [src]="note.imageUrl">
+   <ion-button *ngIf="note.imageUrl" (click)="deleteImage()">Delete Image</ion-button>
+ </ion-item>
+
+  <ion-button expand="full" (click)="saveNote()">Save</ion-button>
+</ion-content>
